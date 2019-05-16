@@ -1,0 +1,15 @@
+
+<div class="container">
+
+  <h1>New Recipe</h1>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an Ingredient" %>
+  <%= f.input :description, label: "Dose description", error: 'Description is mandatory'%>
+
+  <button type="button" class="btn btn-primary"><%= f.button :submit %></button>
+  <% end %>
+
+  <p><%= link_to 'Back to cocktail card', cocktail_path(@cocktail) %></p>
+
+</div>
