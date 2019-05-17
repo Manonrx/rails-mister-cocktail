@@ -1,6 +1,7 @@
 <div class="container">
-  <div class="card">
-    <img src="https://images.pexels.com/photos/1265910/pexels-photo-1265910.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" class="card-img-top" alt="cocktail-img" height="600px">
+  <div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @cocktail.photo, height: 100, width: 400, crop: :fill %>')">
     <div class="card-body">
       <h5 class="card-title"><%= @cocktail.name %></h5>
       <% @cocktail.doses.each do |dose| %>
@@ -12,9 +13,8 @@
       <p class="card-text"><small class="text-muted"><%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail) %></small></p>
     </div>
   </div>
-
   <div class="row">
-    <p><%= link_to "Back to list", cocktails_path %></p>
+    <p><%= link_to "Back to list", root_path %></p>
   </div>
 
 </div>

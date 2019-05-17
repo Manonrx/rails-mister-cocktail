@@ -8,6 +8,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <a href="<%= cocktail_path(cocktail) %>" class="btn btn-primary">More details...</a>
+          <p><%= link_to "Delete", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %></p>
         </div>
       </div>
     </div>
